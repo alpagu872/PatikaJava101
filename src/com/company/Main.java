@@ -1,10 +1,12 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        mantiksalOperatorler();
+        manavKasaProgrami();
 
     }
 
@@ -144,16 +146,201 @@ public class Main {
 
         boolean sonuc = kosul1 || kosul2; // true
 
-        boolean sonuc2 = (a == c) || (a >= b);
+        boolean sonuc2 = (a == c) || (a >= b); // true
 
         System.out.println(!sonuc); // !true = false
 
         System.out.println(sonuc2);
 
+        String str = ((sonuc) ? "Doğru" : "Yanlış");
+        System.out.println(str);
+
 
     }
 
+    public static void kullanicidanVeriAlma() {
+        int a;
+        Scanner girdi = new Scanner(System.in); // Sınıftan nesne tanımlama
 
+        String str = girdi.nextLine();
+
+        System.out.println("Input String: " + str);
+
+
+    }
+
+    public static void notOrtHesaplayanProg() {
+        int matNot, fizikNot, kimyaNot, turkceNot, tarihNot, muzikNot;
+        Scanner girdi = new Scanner(System.in);
+
+        System.out.println("Matematik Notunuz: ");
+        matNot = girdi.nextInt();
+
+        System.out.println("Fizik Notunuz: ");
+        fizikNot = girdi.nextInt();
+
+        System.out.println("Kimya Notunuz: ");
+        kimyaNot = girdi.nextInt();
+
+        System.out.println("Türkçe Notunuz ");
+        turkceNot = girdi.nextInt();
+
+        System.out.println("Tarih Notunuz: ");
+        tarihNot = girdi.nextInt();
+
+        System.out.println("Müzik Notunuz: ");
+        muzikNot = girdi.nextInt();
+
+        float toplam = (matNot + fizikNot + kimyaNot + turkceNot + tarihNot + muzikNot);
+        float sonuc = (float) (toplam / 6.0);
+        System.out.println("Ortalamanız: " + sonuc);
+    }
+
+    public static void notOrtHesaplayanProgUpgrade() {
+        int matNot, fizikNot, kimyaNot, turkceNot, tarihNot, muzikNot;
+        Scanner girdi = new Scanner(System.in);
+
+        System.out.println("Matematik Notunuz: ");
+        matNot = girdi.nextInt();
+
+        System.out.println("Fizik Notunuz: ");
+        fizikNot = girdi.nextInt();
+
+        System.out.println("Kimya Notunuz: ");
+        kimyaNot = girdi.nextInt();
+
+        System.out.println("Türkçe Notunuz ");
+        turkceNot = girdi.nextInt();
+
+        System.out.println("Tarih Notunuz: ");
+        tarihNot = girdi.nextInt();
+
+        System.out.println("Müzik Notunuz: ");
+        muzikNot = girdi.nextInt();
+
+        float toplam = (matNot + fizikNot + kimyaNot + turkceNot + tarihNot + muzikNot);
+        float sonuc = (float) (toplam / 6.0);
+
+        System.out.println("Ortalamanız: " + sonuc);
+        String gecti = sonuc > 60 ? "Sınıfı Geçti" : "Sınıfta Kaldı";
+        System.out.println(gecti);
+
+    }
+
+    public static void kdvTutariHesaplayanProg() {
+        Scanner girdi = new Scanner(System.in);
+        int eldeki = girdi.nextInt();
+
+        float kdvliFiyat, kdv;
+        kdv = (float) (eldeki * 0.18);
+        kdvliFiyat = eldeki + kdv;
+        System.out.println("KDV'siz Fiyat= " + eldeki);
+        System.out.println("KDV'li Fiyat= " + kdvliFiyat);
+        System.out.println("KDV tutarı= " + kdv);
+
+
+    }
+
+    public static void kdvTutariHesaplayanProgUpgrade() {
+        Scanner girdi = new Scanner(System.in);
+        int eldeki = girdi.nextInt();
+
+        float kdvliFiyat, kdv, kdvOran;
+        kdvOran = (float) ((eldeki < 1000) ? 0.18 : 0.08);
+        kdv = eldeki * kdvOran;
+        kdvliFiyat = eldeki + kdv;
+
+
+        System.out.println("KDV'siz Fiyat= " + eldeki);
+        System.out.println("KDV'li Fiyat= " + kdvliFiyat);
+        System.out.println("KDV tutarı= " + kdv);
+        System.out.println(kdvOran);
+
+
+    }
+
+    public static void dikUcgendeHipBulanProg() {
+        int a, b;
+        float hipotenus;
+
+        Scanner girdi = new Scanner(System.in);
+        a = girdi.nextInt();
+        b = girdi.nextInt();
+
+        hipotenus = (float) Math.sqrt((a * a) + (b * b));
+
+        double u = (a + b + hipotenus) / 2;
+        double cevre = (2 * u);
+        double alan = u * (u - a) * (u - b) * (u - hipotenus);
+        System.out.println(hipotenus);
+        System.out.println(cevre);
+        System.out.println(alan);
+    }
+
+    public static void taksimetreHesaplayanProg() {
+        float mesafe, kmBasi, tutar, minUcret, acilisUcret;
+        Scanner girdi = new Scanner(System.in);
+
+        mesafe = girdi.nextInt();
+        kmBasi = 2.2f;
+        acilisUcret = 10f;
+
+        tutar = ((acilisUcret+kmBasi*mesafe) > 20 ) ? (acilisUcret+kmBasi*mesafe) : 20;
+
+        System.out.println(tutar);
+    }
+
+    public static void daireninAlaniVeCevresiniBulanProg(){
+        double alinanCap, alan,cevre,merkezAciOlcusu,daireDilimAlan;
+        Scanner girdi = new Scanner(System.in);
+        alinanCap = girdi.nextDouble();
+
+        merkezAciOlcusu = girdi.nextDouble();
+
+        alan = Math.PI*(alinanCap*alinanCap);
+        cevre = 2* Math.PI *alinanCap;
+        daireDilimAlan = (Math.PI*(alinanCap*alinanCap) *merkezAciOlcusu)/360;
+
+        System.out.println("Alan= " + alan);
+        System.out.println("Çevre= " + cevre);
+        System.out.println("Daire Diliminin Alanı:" + daireDilimAlan);
+
+
+    }
+
+    public static void vucutKitleEndeksi(){
+        Scanner girdi = new Scanner(System.in);
+        float boy,kilo,sonuc;
+
+        boy = girdi.nextFloat();
+        kilo = girdi.nextFloat();
+
+        sonuc = kilo / (boy*boy);
+
+        System.out.println(sonuc);
+    }
+
+    public static void manavKasaProgrami(){
+        Scanner girdi = new Scanner(System.in);
+
+        float armutKg,elmaKg,domatesKg,muzKg,patlicanKg;
+
+        System.out.println("Armut Kaç Kilo ? ");
+        armutKg = girdi.nextFloat();
+        System.out.println("elma Kaç Kilo ? ");
+        elmaKg = girdi.nextFloat();
+        System.out.println("domates Kaç Kilo ? ");
+        domatesKg = girdi.nextFloat();
+        System.out.println("muz Kaç Kilo ? ");
+        muzKg = girdi.nextFloat();;
+        System.out.println("patlican Kaç Kilo ? ");
+        patlicanKg = girdi.nextFloat();
+
+
+        float tutar = (float) ((armutKg*2.14)+(elmaKg*3.67)+(domatesKg*1.11)+(muzKg*0.95)+(patlicanKg*5));
+        System.out.println(tutar);
+
+    }
 }
 
 
