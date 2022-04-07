@@ -6,8 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        manavKasaProgrami();
 
+        ifElseHesapMakinesi();
     }
 
     public static void print() {
@@ -285,21 +285,21 @@ public class Main {
         kmBasi = 2.2f;
         acilisUcret = 10f;
 
-        tutar = ((acilisUcret+kmBasi*mesafe) > 20 ) ? (acilisUcret+kmBasi*mesafe) : 20;
+        tutar = ((acilisUcret + kmBasi * mesafe) > 20) ? (acilisUcret + kmBasi * mesafe) : 20;
 
         System.out.println(tutar);
     }
 
-    public static void daireninAlaniVeCevresiniBulanProg(){
-        double alinanCap, alan,cevre,merkezAciOlcusu,daireDilimAlan;
+    public static void daireninAlaniVeCevresiniBulanProg() {
+        double alinanCap, alan, cevre, merkezAciOlcusu, daireDilimAlan;
         Scanner girdi = new Scanner(System.in);
         alinanCap = girdi.nextDouble();
 
         merkezAciOlcusu = girdi.nextDouble();
 
-        alan = Math.PI*(alinanCap*alinanCap);
-        cevre = 2* Math.PI *alinanCap;
-        daireDilimAlan = (Math.PI*(alinanCap*alinanCap) *merkezAciOlcusu)/360;
+        alan = Math.PI * (alinanCap * alinanCap);
+        cevre = 2 * Math.PI * alinanCap;
+        daireDilimAlan = (Math.PI * (alinanCap * alinanCap) * merkezAciOlcusu) / 360;
 
         System.out.println("Alan= " + alan);
         System.out.println("Çevre= " + cevre);
@@ -308,22 +308,22 @@ public class Main {
 
     }
 
-    public static void vucutKitleEndeksi(){
+    public static void vucutKitleEndeksi() {
         Scanner girdi = new Scanner(System.in);
-        float boy,kilo,sonuc;
+        float boy, kilo, sonuc;
 
         boy = girdi.nextFloat();
         kilo = girdi.nextFloat();
 
-        sonuc = kilo / (boy*boy);
+        sonuc = kilo / (boy * boy);
 
         System.out.println(sonuc);
     }
 
-    public static void manavKasaProgrami(){
+    public static void manavKasaProgrami() {
         Scanner girdi = new Scanner(System.in);
 
-        float armutKg,elmaKg,domatesKg,muzKg,patlicanKg;
+        float armutKg, elmaKg, domatesKg, muzKg, patlicanKg;
 
         System.out.println("Armut Kaç Kilo ? ");
         armutKg = girdi.nextFloat();
@@ -332,15 +332,229 @@ public class Main {
         System.out.println("domates Kaç Kilo ? ");
         domatesKg = girdi.nextFloat();
         System.out.println("muz Kaç Kilo ? ");
-        muzKg = girdi.nextFloat();;
+        muzKg = girdi.nextFloat();
         System.out.println("patlican Kaç Kilo ? ");
         patlicanKg = girdi.nextFloat();
 
 
-        float tutar = (float) ((armutKg*2.14)+(elmaKg*3.67)+(domatesKg*1.11)+(muzKg*0.95)+(patlicanKg*5));
+        float tutar = (float) ((armutKg * 2.14) + (elmaKg * 3.67) + (domatesKg * 1.11) + (muzKg * 0.95) + (patlicanKg * 5));
         System.out.println(tutar);
 
     }
+
+    public static void karsilastirmaOp2() {
+
+        int A = 10;
+        int B = 20;
+        int C = 10;
+        int D = 40;
+
+        //EŞİTLİK OPERATÖRÜ
+
+        System.out.println(A == C);
+        System.out.println(A == B);
+        System.out.println(C == D);
+        System.out.println();
+        //EŞİT DEĞİL OPERATÖRÜ
+
+        System.out.println(A != B);
+        System.out.println(A != C);
+        System.out.println(C != B);
+
+        //BÜYÜKTÜR OPERATÖRÜ
+        System.out.println();
+
+        System.out.println(A > D);
+        System.out.println(B > C);
+        System.out.println(A > B);
+        System.out.println();
+
+        //BÜYÜK EŞİTTİR OPERATÖRÜ
+
+        System.out.println(A >= B);
+        System.out.println(B >= D);
+        System.out.println(C >= A);
+        System.out.println();
+
+        //KÜÇÜKTÜR OPERATÖRÜ
+
+        System.out.println(A < B);
+        System.out.println(B < C);
+        System.out.println(C < A);
+        System.out.println();
+
+        //KÜÇÜK EŞİTTİR OPERATÖRÜ
+
+        System.out.println(A <= B);
+        System.out.println(C <= A);
+        System.out.println(B <= C);
+        System.out.println();
+
+
+    }
+
+    public static void kosulluIfadelerKodBloklari() {
+
+        int a = 10, b = 20, c = 10, d;
+
+        boolean kosul1 = (a > b);
+
+        boolean kosul2 = (a > c);
+
+        boolean veSonuc = kosul1 && kosul2;
+        boolean veyaSonuc = kosul1 || kosul2;
+
+        System.out.println(kosul1);
+        System.out.println(kosul2);
+
+        System.out.println("Sonuc: " + veSonuc);
+        System.out.println("Veya sonuc: " + veyaSonuc);
+
+        d = (a == b) ? 30 : 20;
+
+        System.out.println(d);
+
+    }
+
+    public static void kodBloklari() {
+
+        int a = 5;
+        System.out.println(a);
+
+
+    }
+
+    public static void ifElse() {
+
+        int a = 10, b = 20;
+        boolean compare = (a == b);
+
+//        System.out.println(compare);
+//
+//        String str = compare == true ? "Eşittir" : "Eşit değildir";
+//        System.out.println(str);
+
+
+        if (!compare) {
+            a = 50;
+            System.out.println("A sayısı: " + a);
+            System.out.println("DOĞRUDUR");
+        } else {
+            System.out.println("YANLIŞTIR");
+        }
+    }
+
+    public static void ifElse2() {
+
+        int a = 10, b = 20, c = 1;
+        if ((a < b) && (a < c)) {
+            System.out.println("A en küçüktür.");
+        } else if (c < b) {
+            System.out.println("B ortancadır.");
+        } else {
+            System.out.println("c en küçüktür");
+        }
+
+
+    }
+
+    public static void switchCase() {
+        Scanner girdi = new Scanner(System.in);
+        System.out.println("Lütfen 1 veya 2'yi seçiniz.");
+        int a = girdi.nextInt();
+
+
+        switch (a) {
+            case 1:
+                System.out.println("SA AS");
+                break;
+            case 2:
+                System.out.println("AS SA");
+                break;
+            default:
+                System.out.println("Lütfen 1 veya 2'yi seçiniz.");
+                switchCase();
+
+        }
+
+
+    }
+
+    public static void switchCaseHesapMakinesi() {
+        Scanner girdi = new Scanner(System.in);
+        System.out.println("1-TOPLAMA \n" +
+                "2-ÇIKARMA\n" +
+                "3-ÇARPMA\n" +
+                "4-BÖLME");
+        int a = girdi.nextInt();
+        int n1, n2;
+
+        System.out.println("İlk sayıyı giriniz: ");
+        n1 = girdi.nextInt();
+        System.out.println("İkinci sayıyı giriniz: ");
+        n2 = girdi.nextInt();
+
+
+        switch (a) {
+
+            case 1:
+                System.out.println(n1 + n2);
+                break;
+            case 2:
+                System.out.println(n1 - n2);
+                break;
+            case 3:
+                System.out.println(n1 * n2);
+                break;
+            case 4:
+                System.out.println((float) n1 / n2);
+                break;
+            default:
+                System.out.println("Geçersiz işlem");
+                switchCaseHesapMakinesi();
+
+        }
+
+
+    }
+
+    public static void ifElseHesapMakinesi() {
+        int n1, n2, secim;
+        Scanner girdi = new Scanner(System.in);
+
+        System.out.println("1-TOPLAMA \n" +
+                "2-ÇIKARMA\n" +
+                "3-ÇARPMA\n" +
+                "4-BÖLME");
+
+        secim = girdi.nextInt();
+
+        System.out.println("İlk Sayı ");
+        n1 = girdi.nextInt();
+        System.out.println("İkinci Sayı");
+        n2 = girdi.nextInt();
+
+        if (secim == 1) {
+            System.out.println(n1 + n2);
+        } else if (secim == 2) {
+            System.out.println(n1 - n2);
+        } else if (secim == 3) {
+            System.out.println(n1 * n2);
+        } else if (secim == 4) {
+            if (n2 != 0)
+                System.out.println((float) n1 / n2);
+            else {
+                System.out.println("Sıfıra bölünemez.");
+            }
+        } else {
+            System.out.println("Geçersiz İşlem!");
+            ifElseHesapMakinesi();
+        }
+
+
+    }
+
+
 }
 
 
