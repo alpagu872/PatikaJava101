@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        sayilariBuyuktenKucugeSiralama();
 
-
-        ifElseHesapMakinesi();
     }
 
     public static void print() {
@@ -551,6 +550,169 @@ public class Main {
             ifElseHesapMakinesi();
         }
 
+
+    }
+
+    public static void kullaniciGirisi() {
+        Scanner girdi = new Scanner(System.in);
+        String username, password;
+
+        System.out.println("Kullanıcı adınız:");
+        username = girdi.nextLine();
+
+        System.out.println("Şifreniz:");
+        password = girdi.nextLine();
+
+        if ((username.equals("Alpagu")) && (password.equals("123"))) {
+            System.out.println("Başarıyla giriş yapıldı...\n" +
+                    "Yönlendiriliyorsunuz...");
+
+        } else if (!(password.equals("123")) && !(username.equals("Alpagu"))) {
+            System.out.println("Kullanıcı adınız veya şifreniz yanlış, tekrar deneyiniz.");
+            kullaniciGirisi();
+        } else if (!(password.equals("123"))) {
+            System.out.println("Şifrenizi sıfırlamak ister misiniz?");
+
+            System.out.println("1-HAYIR\n" +
+                    "2-EVET");
+            int secim = girdi.nextInt();
+            switch (secim) {
+                case 1:
+                    System.out.println("Giris ekranına yönlendiriliyorsunuz.");
+                    kullaniciGirisi();
+                    break;
+                case 2:
+                    System.out.println("Şifre sıfırlama ekranına yönlendiriliyorsunuz.");
+                    sifreSifirlama("123");
+                    break;
+                default:
+                    kullaniciGirisi();
+                    break;
+            }
+        }
+
+
+    }
+
+    public static String sifreSifirlama(String inputPass) {
+        Scanner girdi = new Scanner(System.in);
+
+        String yeniSifre;
+
+        System.out.println("Yeni şifrenizi giriniz:");
+        yeniSifre = girdi.nextLine();
+        if (yeniSifre.equals(inputPass)) {
+            System.out.println("Şifre oluşturulamadı, Lütfen farklı bir şifre deneyiniz.");
+            sifreSifirlama(inputPass);
+        } else {
+            System.out.println("Yeni şifreniz oluşturuldu.\n" +
+                    "Giriş ekranına yönlendiriliyorsunuz....");
+        }
+        kullaniciGirisi();
+        return yeniSifre;
+
+    }
+
+    public static void sinifiGecmeDurumu() {
+        Scanner girdi = new Scanner(System.in);
+        int sayac = 0, toplam = 0, ortalama;
+
+        int mat, fizik, turkce, kimya, muzik;
+
+
+        System.out.println("Matematik notunuz:");
+        mat = girdi.nextInt();
+        if (mat >= 0 && mat <= 100) {
+            toplam += mat;
+            sayac++;
+        }
+        System.out.println("Fizik notunuz:");
+        fizik = girdi.nextInt();
+        if (fizik >= 0 && fizik <= 100) {
+
+            toplam += fizik;
+            sayac++;
+        }
+        System.out.println("Türkçe notunuz:");
+        turkce = girdi.nextInt();
+        if (turkce >= 0 && turkce <= 100) {
+            toplam += turkce;
+            sayac++;
+        }
+        System.out.println("Kimya notunuz:");
+        kimya = girdi.nextInt();
+        if (kimya >= 0 && kimya <= 100) {
+            toplam += kimya;
+            sayac++;
+        }
+        System.out.println("Müzik notunuz:");
+        muzik = girdi.nextInt();
+        if (muzik >= 0 && muzik <= 100) {
+            toplam += muzik;
+            sayac++;
+        }
+        if (sayac == 0) {
+            System.out.println("Geçersiz ders sayısı");
+
+        } else {
+            ortalama = (toplam / sayac);
+            if (ortalama <= 55) {
+                System.out.println(ortalama + " ile sınıfta kaldınız.");
+            } else {
+                System.out.println(ortalama + " ile sınıfı geçtiniz.");
+            }
+
+        }
+
+
+    }
+
+    public static void havaSicakliginaGoreEtkinlikOnerisi() {
+        int sicaklik;
+        Scanner girdi = new Scanner(System.in);
+        sicaklik = girdi.nextInt();
+
+        if (sicaklik < 5) {
+            System.out.println("Kayak");
+        } else if (sicaklik > 5 && sicaklik < 15) {
+            System.out.println("Sinema");
+        } else if (sicaklik > 15 && sicaklik < 25) {
+            System.out.println("Piknik");
+        } else if (sicaklik > 25) {
+            System.out.println("Yüzme");
+        }
+
+
+    }
+
+    public static void sayilariBuyuktenKucugeSiralama() {
+
+        Scanner girdi = new Scanner(System.in);
+
+        int a, b, c;
+        a = girdi.nextInt();
+        b = girdi.nextInt();
+        c = girdi.nextInt();
+        if ((a < c) && (a < b)) {
+            if (b < c) {
+                System.out.println(a + "<" + b + "<" + c);
+            } else {
+                System.out.println(a + "<" + c + "<" + b);
+            }
+        } else if ((b < c) && (b < a)) {
+            if (a < c) {
+                System.out.println(b + "<" + a + "<" + c);
+            } else {
+                System.out.println(b + "<" + c + "<" + a);
+            }
+        } else if ((c < a) && (c < b)) {
+            if (b < a) {
+                System.out.println(c + "<" + b + "<" + a);
+            } else {
+                System.out.println(c + "<" + a + "<" + b);
+            }
+
+        }
 
     }
 
