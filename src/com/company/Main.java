@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        sayilariBuyuktenKucugeSiralama();
+        forDongusu();
 
     }
 
@@ -716,8 +716,385 @@ public class Main {
 
     }
 
+    public static void burcBulanProg() {
 
+        int month, day;
+        Scanner girdi = new Scanner(System.in);
+        System.out.println("Doğduğunuz ay: ");
+        month = girdi.nextInt();
+
+        System.out.println("Doğduğunuz gün: ");
+        day = girdi.nextInt();
+
+        switch (month) {
+            case 1:
+                if (1 <= day && day <= 31) {
+                    if (day < 22) {
+                        System.out.println("Oğlak Burcu");
+                    } else {
+                        System.out.println("Kova Burcu");
+                    }
+                }
+                break;
+
+            case 2:
+                if (1 <= day && day <= 28) {
+                    if (day < 19) {
+                        System.out.println("Kova Burcu");
+                    } else {
+                        System.out.println("Balık Burcu");
+                    }
+                }
+                break;
+            case 3:
+                if (1 <= day && day <= 31) {
+                    if (day < 20) {
+                        System.out.println("Balık Burcu");
+                    } else {
+                        System.out.println("Koç Burcu");
+
+                    }
+                }
+                break;
+            case 4:
+                if (1 <= day && day <= 30) {
+                    if (day < 21) {
+                        System.out.println("Koç Burcu");
+                    } else {
+                        System.out.println("Boğa Burcu");
+                    }
+                }
+                break;
+            case 5:
+                if (1 <= day && day <= 29) {
+                    if (day < 21) {
+                        System.out.println("Boğa Burcu");
+                    } else {
+                        System.out.println("İkizler Burcu");
+                    }
+                }
+                break;
+            case 6:
+                if (1 <= day && day <= 30) {
+                    if (day < 22) {
+                        System.out.println("İkizler Burcu");
+                    } else {
+                        System.out.println("Yengeç Burcu");
+                    }
+                }
+                break;
+            case 7:
+                if (1 <= day && day <= 31) {
+                    if (day < 22) {
+                        System.out.println("Yengeç Burcu");
+                    } else {
+                        System.out.println("Aslan Burcu");
+                    }
+                }
+                break;
+            case 8:
+                if (1 <= day && day <= 31) {
+                    if (day < 22) {
+                        System.out.println("Aslan Burcu");
+                    } else {
+                        System.out.println("Başak Burcu");
+                    }
+                }
+                break;
+            case 9:
+                if (1 <= day && day <= 30) {
+                    if (day < 23) {
+                        System.out.println("Başak Burcu");
+                    } else {
+                        System.out.println("Terazi Burcu");
+                    }
+                }
+                break;
+            case 10:
+                if (1 <= day && day <= 30) {
+                    if (day < 22) {
+                        System.out.println("Terazi Burcu");
+                    } else {
+                        System.out.println("Akrep Burcu");
+                    }
+                }
+                break;
+            case 11:
+                if (1 <= day && day <= 30) {
+                    if (day < 21) {
+                        System.out.println("Akrep Burcu");
+                    } else {
+                        System.out.println("Yay Burcu");
+                    }
+                }
+                break;
+            case 12:
+                if (1 <= day && day <= 31) {
+                    if (day < 21) {
+                        System.out.println("Yay Burcu");
+                    } else {
+                        System.out.println("Oğlak Burcu");
+                    }
+                }
+                break;
+
+            default:
+                System.out.println("Hatalı giriş.");
+                break;
+        }
+
+
+    }
+
+    public static void hackerrankIfElse() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String ans = "";
+        if (n % 2 == 1) {
+            ans = "Weird";
+        } else if (n >= 2 && n <= 5) {
+            ans = "Not Weird";
+        } else if (n >= 6 && n <= 20) {
+            ans = "Weird";
+        } else if (n > 20) {
+            ans = "Not Weird";
+        }
+
+        System.out.println(ans);
+    }
+
+    public static void ucakBiletiHesaplama() {
+        Scanner girdi = new Scanner(System.in);
+
+        float toplam, km, yasIndirimi = 1, kmF = 0.1f, yonIndirimi = 1;
+        int yas, gidisGelis = 1;
+
+//        //inputlar
+//        //inputlar
+//        //inputlar
+//
+//        if (//şart kontrolü)
+//        else{
+//            //koşullara göre yeni değişken değerlerinin belirlenmesi
+//
+//            //total hesap
+//            //kapanış
+//        }
+        System.out.println("Yaşınız:");
+        yas = girdi.nextInt();
+
+        System.out.println("Km cinsinden gideceğiniz mesafe;");
+        km = girdi.nextInt();
+
+        System.out.println("1-TEK YÖN \n" +
+                "2-GİDİŞ GELİŞ");
+
+        gidisGelis = girdi.nextInt();
+
+        if (yas < 0 || km < 0 || (gidisGelis != 1 && gidisGelis != 2)) {
+            System.out.println("Yanlış Değer Girişi");
+        } else {
+            if (yas < 12) {
+                yasIndirimi = 0.5f;
+            } else if (12 < yas && yas < 24) {
+                yasIndirimi = 0.9f;
+            } else if (yas > 65) {
+                yasIndirimi = 0.7f;
+            }
+            if (gidisGelis == 2) {
+                yonIndirimi = 1.6f;
+
+            }
+            toplam = km * kmF * yasIndirimi * yonIndirimi;
+            System.out.println(toplam);
+        }
+    }
+
+    public static void cinZodyagi() {
+        Scanner girdi = new Scanner(System.in);
+        int yil, zodyak;
+        yil = girdi.nextInt();
+
+        zodyak = yil % 12;
+
+        if (zodyak == 0) {
+            System.out.println("Maymun");
+
+        } else if (zodyak == 1) {
+            System.out.println("Horoz");
+
+        } else if (zodyak == 2) {
+            System.out.println("Köpek");
+
+        } else if (zodyak == 3) {
+            System.out.println("Domuz");
+
+        } else if (zodyak == 4) {
+            System.out.println("Fare");
+
+        } else if (zodyak == 5) {
+            System.out.println("Öküz");
+
+        } else if (zodyak == 6) {
+            System.out.println("Kaplan");
+
+        } else if (zodyak == 7) {
+            System.out.println("Tavşan");
+
+        } else if (zodyak == 8) {
+            System.out.println("Ejderha");
+
+        } else if (zodyak == 9) {
+            System.out.println("Yılan");
+
+        } else if (zodyak == 10) {
+            System.out.println("At");
+
+
+        } else if (zodyak == 11) {
+            System.out.println("Koyun");
+
+        } else {
+            System.out.println("Yanlış input");
+        }
+
+    }
+
+    public static void artikYilHesaplama() {
+        Scanner girdi = new Scanner(System.in);
+
+        int yil;
+        boolean artikYil;
+
+        yil = girdi.nextInt();
+        if (yil % 100 == 0) {
+            artikYil = (yil % 400 == 0);
+            if (artikYil == true) {
+                System.out.println(yil + " artik yildir.");
+            } else {
+                System.out.println(yil + " artık yıl değildir.");
+
+            }
+
+        } else if (yil % 4 == 0) {
+            System.out.println(yil + " artık yıldır.");
+        } else {
+            System.out.println(yil + " artık yıl değildir.");
+        }
+
+    }
+
+    public static void whileDongusu() {
+
+        int i = 0;
+        int k = 1;
+        while (i < 5) {
+            System.out.println(i);
+
+            while (k <= 10) {
+                System.out.print(k + ", ");
+                k++;
+            }
+            System.out.println();
+            i++;
+
+        }
+    }
+
+    public static void ortaBulma() {
+
+        int left = 100, right = 200;
+        while (++left < --right) {
+        }
+        System.out.println(left);
+    }
+
+    public static void passCheckWhile() {
+        Scanner girdi = new Scanner(System.in);
+        int password = 123456;
+
+        boolean isPasswordSuccess = true;
+
+        while (isPasswordSuccess) {
+            System.out.println("Şifrenizi giriniz:");
+            int inpPass = girdi.nextInt();
+
+            if (password == inpPass) {
+                isPasswordSuccess = false;
+                System.out.println("Başarıyla giriş yapıldı...");
+
+            } else {
+                System.out.println("Şifreniz yanlış, tekrar deneyin...");
+
+
+            }
+
+        }
+
+    }
+
+    public static void doWhile() {
+        int yil = 2021;
+        do {
+            System.out.println(yil);
+            yil++;
+        } while (yil < 2029);
+
+    }
+
+    public static void doWhilePassCheck() {
+        Scanner girdi = new Scanner(System.in);
+        int pass;
+        boolean askPass = true;
+
+        do {
+            System.out.println("Şifrenizi giriniz: ");
+            pass = girdi.nextInt();
+            if (pass == 1133) {
+                System.out.println("Şifreniz doğru.");
+                askPass = false;
+            } else {
+                System.out.println("Yanlış şifre!");
+            }
+        }
+        while (askPass);
+
+        //
+        int i=1, j=1;
+        while(i<3)
+        {
+            do
+            {
+                System.out.print(j + ",");
+                j++;
+
+            }while(j<4);
+
+
+            i++;
+        }
+
+    }
+
+    public static void forDongusu(){
+        for (int sayac = 1 ; sayac<= 10 ; sayac++){
+            System.out.print(sayac +" ");
+        }
+
+        System.out.println();
+
+        int k = 1;
+        while (k <= 10){
+            System.out.print(k + " ");
+            k++;
+        }
+
+
+
+    }
 }
+
+
 
 
 
