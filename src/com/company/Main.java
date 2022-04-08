@@ -5,9 +5,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        forDongusu();
+        usluSayiHesapFor();
+    }
+
+    public static void test() {
+
 
     }
+
 
     public static void print() {
         System.out.println("Sa");
@@ -1060,15 +1065,13 @@ public class Main {
         while (askPass);
 
         //
-        int i=1, j=1;
-        while(i<3)
-        {
-            do
-            {
+        int i = 1, j = 1;
+        while (i < 3) {
+            do {
                 System.out.print(j + ",");
                 j++;
 
-            }while(j<4);
+            } while (j < 4);
 
 
             i++;
@@ -1076,22 +1079,276 @@ public class Main {
 
     }
 
-    public static void forDongusu(){
-        for (int sayac = 1 ; sayac<= 10 ; sayac++){
-            System.out.print(sayac +" ");
+    public static void forDongusu() {
+        for (int sayac = 1; sayac <= 10; sayac++) {
+            System.out.print(sayac + " ");
         }
 
         System.out.println();
 
         int k = 1;
-        while (k <= 10){
+        while (k <= 10) {
             System.out.print(k + " ");
             k++;
         }
 
 
+    }
+
+    public static void forAndWhileConc() {
+        Scanner girdi = new Scanner(System.in);
+
+        int sayi;
+        /*
+
+        for (boolean run = true; run;){
+            System.out.println("Sayi giriniz:");
+            sayi = girdi.nextInt();
+            if (sayi < 0){
+                run = false;
+            }*/
+
+        boolean run = true;
+
+
+//        while (run) {
+//            System.out.println("Sayı giriniz:");
+//            sayi = girdi.nextInt();
+//
+//            if (sayi < 0) {
+//                run = false;
+//            }
+//        }
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+
+        int i = 1;
+        while (i <= 10) {
+            System.out.println(i);
+            i++;
+        }
+
 
     }
+
+    public static void continueAndBreak() {
+
+//        for (int i = 1 ; i <= 10 ; i++){
+//            if (i==5){
+//                break;
+//            }
+//            System.out.println(i);
+//        }//break
+//
+//        for (int i = 1 ; i <= 10; i++){
+//
+//            if (i == 5){
+//                continue;
+//            }
+//
+//            System.out.println(i);
+//        } //continue
+
+        System.out.println();
+        System.out.println();
+
+        int i = 1;
+        while (i <= 10) {
+            i++;
+
+            if (i % 2 == 0) {
+                continue;
+            }
+
+            System.out.println(i);
+
+
+        }
+    }
+
+    public static void eKadarCiftSayiBulanProg() {
+
+
+//        for (int i = 0; i < sayi; i++) {
+//            if (i % 2 == 0) {
+//                System.out.print(i + ",");
+//            }
+//        }
+        Scanner girdi = new Scanner(System.in);
+
+        int sayi;
+        int toplam = 0, sayac = 0, ort;
+
+        System.out.println("Sayiyi giriniz: ");
+        sayi = girdi.nextInt();
+
+
+        for (int i = 1; i < sayi; i++) {
+
+            if ((i % 3 == 0) && (i % 4 == 0)) {
+                toplam += i;
+                sayac++;
+                System.out.println(i);
+            }
+
+
+        }
+        ort = toplam / sayac;
+        System.out.println("Ortalama: " + ort);
+
+
+    }
+
+    public static void girilenTekSayilarinTop() {
+
+        Scanner girdi = new Scanner(System.in);
+
+        int deger, toplam = 0;
+        do {
+            System.out.println("Bir sayı giriniz: ");
+            deger = girdi.nextInt();
+            if (deger % 2 == 1) {
+                toplam += deger;
+            }
+
+        } while (deger > 0);
+
+        System.out.println("Toplam: " + toplam);
+    }
+
+    public static void tekSayiGirileneKadarCift() {
+
+        //Java döngüler ile tek bir sayı girilene kadar kullanıcıdan girişleri kabul eden
+        // ve girilen değerlerden çift ve 4'ün katları olan sayıları toplayıp ekrana basan
+        // programı yazıyoruz.
+
+        Scanner girdi = new Scanner(System.in);
+        int deger, toplam = 0;
+
+        do {
+            System.out.println("Değer Giriniz: ");
+            deger = girdi.nextInt();
+            if (deger % 4 == 0) {
+                toplam += deger;
+            }
+
+        } while (!(deger % 2 == 1));
+        System.out.println("Toplam : " + toplam);
+
+    }
+
+    public static void girilenSayidanKucukIkininKuvvetleri() {
+
+        //Java döngüler ile girilen sayıya kadar olan 2'nin kuvvetlerini
+        // ekrana yazdıran programı yazıyoruz.
+
+        Scanner girdi = new Scanner(System.in);
+
+
+        System.out.println("Sayiyi giriniz: ");
+        int sayi = girdi.nextInt();
+
+
+        for (int i = 1; i <= sayi; i *= 2) {
+            System.out.println(i);
+
+        }
+
+    }
+
+    public static void kuvvetlerOdev() {
+        //Java döngüler ile girilen sayıya kadar olan 4 ve 5'in kuvvetlerini ekrana
+        // yazdıran programı yazıyoruz.
+
+        Scanner girdi = new Scanner(System.in);
+
+        int n = girdi.nextInt();
+
+        for (int i = 1, j = 1; i <= n && j <= n; i *= 4, j *= 5) {
+            System.out.println(i + ", " + j);
+
+        }
+
+    }
+
+    public static void faktoriyelHesabi(){
+        Scanner girdi = new Scanner(System.in);
+        int n = girdi.nextInt();
+        int total = 1;
+        for (int i = 1 ; i <= n; i++){
+            total = total * i ;
+        }
+        System.out.println(n+"! = " + total);
+    }
+
+    public static void kombOdevi(){
+
+        //Java ile kombinasyon hesaplayan program yazınız.
+
+        Scanner girdi = new Scanner(System.in);
+        System.out.println("N değerini giriniz: ");
+        int n = girdi.nextInt();
+        System.out.println("R değerini giriniz: ");
+        int r = girdi.nextInt();
+
+
+        int totaln = 1,totalr=1;
+        int nEksiRfak = 1;
+
+        for (int i = 1 ; i <= n; i++){
+            totaln = totaln * i ;
+        }
+
+        for (int j = 1 ;  j <= r ; j++){
+            totalr = totalr * j;
+        }
+
+        for (int i = 1 ; i <= n-r ; i++){
+            nEksiRfak *=i;
+        }
+
+        double komb = (totaln) / ((totalr) * (nEksiRfak));
+
+        System.out.println(komb);
+    }
+
+    public static void usluSayiHesaplayanProg(){
+
+        //Java ile kullanıcının girdiği değerler ile üslü sayı hesaplayan programı
+        // yazıyoruz.
+
+        Scanner girdi = new Scanner(System.in);
+
+        int n = girdi.nextInt();
+        int k = girdi.nextInt();
+        int sonuc = 1;
+        while (k != 0){
+            sonuc *= n;
+            k--;
+
+        }
+        System.out.println(sonuc);
+    }
+
+    public static void usluSayiHesapFor(){
+        //Java ile kullanıcının girdiği değerler ile üslü sayı hesaplayan programı
+        // "For Döngüsü" kullanarak yapınız.
+
+        Scanner girdi = new Scanner(System.in);
+        int n,k, sonuc = 1;
+        n = girdi.nextInt();
+        k = girdi.nextInt();
+
+        for (int i = k; i != 0  ; i--){
+            sonuc *= n;
+        }
+        System.out.println(sonuc);
+
+    }
+
+
 }
 
 
