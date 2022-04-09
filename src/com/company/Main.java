@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        atmProjesi();
+        perfectNumber();
     }
 
     public static void test() {
@@ -486,10 +486,7 @@ public class Main {
 
     public static void switchCaseHesapMakinesi() {
         Scanner girdi = new Scanner(System.in);
-        System.out.println("1-TOPLAMA \n" +
-                "2-ÇIKARMA\n" +
-                "3-ÇARPMA\n" +
-                "4-BÖLME");
+        System.out.println("1-TOPLAMA \n" + "2-ÇIKARMA\n" + "3-ÇARPMA\n" + "4-BÖLME");
         int a = girdi.nextInt();
         int n1, n2;
 
@@ -526,10 +523,7 @@ public class Main {
         int n1, n2, secim;
         Scanner girdi = new Scanner(System.in);
 
-        System.out.println("1-TOPLAMA \n" +
-                "2-ÇIKARMA\n" +
-                "3-ÇARPMA\n" +
-                "4-BÖLME");
+        System.out.println("1-TOPLAMA \n" + "2-ÇIKARMA\n" + "3-ÇARPMA\n" + "4-BÖLME");
 
         secim = girdi.nextInt();
 
@@ -545,8 +539,7 @@ public class Main {
         } else if (secim == 3) {
             System.out.println(n1 * n2);
         } else if (secim == 4) {
-            if (n2 != 0)
-                System.out.println((float) n1 / n2);
+            if (n2 != 0) System.out.println((float) n1 / n2);
             else {
                 System.out.println("Sıfıra bölünemez.");
             }
@@ -569,8 +562,7 @@ public class Main {
         password = girdi.nextLine();
 
         if ((username.equals("Alpagu")) && (password.equals("123"))) {
-            System.out.println("Başarıyla giriş yapıldı...\n" +
-                    "Yönlendiriliyorsunuz...");
+            System.out.println("Başarıyla giriş yapıldı...\n" + "Yönlendiriliyorsunuz...");
 
         } else if (!(password.equals("123")) && !(username.equals("Alpagu"))) {
             System.out.println("Kullanıcı adınız veya şifreniz yanlış, tekrar deneyiniz.");
@@ -578,8 +570,7 @@ public class Main {
         } else if (!(password.equals("123"))) {
             System.out.println("Şifrenizi sıfırlamak ister misiniz?");
 
-            System.out.println("1-HAYIR\n" +
-                    "2-EVET");
+            System.out.println("1-HAYIR\n" + "2-EVET");
             int secim = girdi.nextInt();
             switch (secim) {
                 case 1:
@@ -610,8 +601,7 @@ public class Main {
             System.out.println("Şifre oluşturulamadı, Lütfen farklı bir şifre deneyiniz.");
             sifreSifirlama(inputPass);
         } else {
-            System.out.println("Yeni şifreniz oluşturuldu.\n" +
-                    "Giriş ekranına yönlendiriliyorsunuz....");
+            System.out.println("Yeni şifreniz oluşturuldu.\n" + "Giriş ekranına yönlendiriliyorsunuz....");
         }
         kullaniciGirisi();
         return yeniSifre;
@@ -891,8 +881,7 @@ public class Main {
         System.out.println("Km cinsinden gideceğiniz mesafe;");
         km = girdi.nextInt();
 
-        System.out.println("1-TEK YÖN \n" +
-                "2-GİDİŞ GELİŞ");
+        System.out.println("1-TEK YÖN \n" + "2-GİDİŞ GELİŞ");
 
         gidisGelis = girdi.nextInt();
 
@@ -1061,8 +1050,7 @@ public class Main {
             } else {
                 System.out.println("Yanlış şifre!");
             }
-        }
-        while (askPass);
+        } while (askPass);
 
         //
         int i = 1, j = 1;
@@ -1417,11 +1405,9 @@ public class Main {
 
         //basamak sayisinin hesaplanmasi
 
-        int basamakSayisi = 0,
-                tempGirilenSayi = girilenSayi; // Girilen değeri kaybetmemek için oluşturulan gecici değişken.
+        int basamakSayisi = 0, tempGirilenSayi = girilenSayi; // Girilen değeri kaybetmemek için oluşturulan gecici değişken.
         int basamakDegeri;
-        int sonuc = 0,
-                usluSonuc; //global ve lokal değişken kritik bir durum, eğer ilk 1 atamasını burada yapıp while içinde
+        int sonuc = 0, usluSonuc; //global ve lokal değişken kritik bir durum, eğer ilk 1 atamasını burada yapıp while içinde
         // lokal olarak yapmaz iseniz sonuc çıkmayacak.
 
 
@@ -1566,16 +1552,10 @@ public class Main {
             password = girdi.nextLine();
 
             if (userName.equals("Alpagu") && password.equals("123456")) {
-                System.out.println("Giriş İşlemi Başarılı.\n" +
-                        "X Bankasına hoşgeldiniz.\n" +
-                        "Güncel Bakiyeniz:  " + bakiye);
+                System.out.println("Giriş İşlemi Başarılı.\n" + "X Bankasına hoşgeldiniz.\n" + "Güncel Bakiyeniz:  " + bakiye);
 
                 do {
-                    System.out.println("Lütfen yapmak istediğiniz işlemi seçiniz: \n" +
-                            "1-Para Yatırma\n" +
-                            "2-Para Çekme\n" +
-                            "3-Bakiye Sorgula \n" +
-                            "4-Çıkış Yap");
+                    System.out.println("Lütfen yapmak istediğiniz işlemi seçiniz: \n" + "1-Para Yatırma\n" + "2-Para Çekme\n" + "3-Bakiye Sorgula \n" + "4-Çıkış Yap");
                     secim = girdi.nextInt();
 
                     if (secim == 1) {
@@ -1589,8 +1569,7 @@ public class Main {
                         }
                     }
                     if (secim == 2) {
-                        System.out.println("Güncel bakiyeniz: " + bakiye + "\n" +
-                                "Çekmek istediğiniz miktarı giriniz: ");
+                        System.out.println("Güncel bakiyeniz: " + bakiye + "\n" + "Çekmek istediğiniz miktarı giriniz: ");
                         int miktar = girdi.nextInt();
                         if (bakiye < miktar || miktar < 0) {
                             System.out.println("Yetersiz Bakiye");
@@ -1619,7 +1598,169 @@ public class Main {
 
 
     }
+
+    public static void atmProjesiSwitchCase() {
+        Scanner girdi = new Scanner(System.in);
+        String userName, password;
+        int girisHakki = 3;
+        int bakiye = 1500;
+        int secim;
+
+        while (girisHakki > 0) {
+            System.out.println("Kullanıcı adınızı giriniz: ");
+            userName = girdi.nextLine();
+
+            System.out.println("Şifrenizi giriniz: ");
+            password = girdi.nextLine();
+
+            if (userName.equals("Alpagu") && password.equals("123456")) {
+                System.out.println("Giriş İşlemi Başarılı.\n" + "X Bankasına hoşgeldiniz.\n" + "Güncel Bakiyeniz:  " + bakiye);
+
+                do {
+                    System.out.println("Lütfen yapmak istediğiniz işlemi seçiniz: \n" + "1-Para Yatırma\n" + "2-Para Çekme\n" + "3-Bakiye Sorgula \n" + "4-Çıkış Yap");
+                    secim = girdi.nextInt();
+
+                    switch (secim) {
+                        case 1:
+                            System.out.println("Yatırılacak Miktar: ");
+                            int miktar = girdi.nextInt();
+                            if (miktar > 0) {
+                                bakiye += miktar;
+                                System.out.println("Güncel miktar: " + bakiye);
+                            } else {
+                                System.out.println("Girilen miktar 0'dan büyük olmalı!");
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Güncel bakiyeniz: " + bakiye + "\n" + "Çekmek istediğiniz miktarı giriniz: ");
+                            int miktarCekme = girdi.nextInt();
+                            if (bakiye < miktarCekme || miktarCekme < 0) {
+                                System.out.println("Yetersiz Bakiye");
+                            } else {
+                                bakiye -= miktarCekme;
+                                System.out.println("Güncel bakiyeniz: " + bakiye);
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Güncel bakiyeniz: " + bakiye);
+                            break;
+                        case 4:
+                            System.out.println("Bizi tercih ettiğiniz için teşekkürler...");
+                            break;
+                        default:
+                            System.out.println("Yanlış veya varolmayan işlem tercihi.");
+                            break;
+                    }
+
+                } while (secim != 4);
+
+
+                break;
+
+
+            } else {
+                System.out.println("Hatalı kullanıcı adı veya şifre.");
+                girisHakki -= 1;
+                System.out.println("Kalan hakkınız: " + girisHakki);
+                if (girisHakki == 0) {
+                    System.out.println("Hesabınız bloke edildi.");
+                }
+            }
+        }
+
+
+    }
+
+    public static void ebobVeEkokBulanProg() {
+        Scanner girdi = new Scanner(System.in);
+
+        int n1, n2, ebob = 1;
+        System.out.println("N1: ");
+        n1 = girdi.nextInt();
+        System.out.println("N2: ");
+        n2 = girdi.nextInt();
+
+
+        for (int i = 1; i <= n1; i++) {
+            if (n1 % i == 0 && n2 % i == 0) {
+                System.out.println(i);
+                ebob = i;
+            }
+        }
+
+        System.out.println("***************************** ");
+        for (int k = n1; k >= 1; k--) {
+            if (n1 % k == 0 && n2 % k == 0) {
+                ebob = k;
+                System.out.println(ebob);
+                break;
+            }
+
+        }
+
+
+    }
+
+    public static void ebobWhile() {
+        Scanner girdi = new Scanner(System.in);
+        int n1, n2, k;
+        n1 = girdi.nextInt();
+        n2 = girdi.nextInt();
+        int ebob = 1, ekok = 1;
+
+        k = n1;
+        while (k > 1) {
+            if (n1 % k == 0 && n2 % k == 0) {
+                ebob = k;
+                ekok = (n1 * n2) / ebob;
+                break;
+            }
+            k--;
+        }
+        System.out.println("Ebob : " + ebob + "\nEkok : " + ekok);
+
+    }
+
+    public static void minVeMax() {
+        Scanner girdi = new Scanner(System.in);
+        int total, geciciMax = 0, geciciMin = 999999999;
+        System.out.print("Toplam kaç adet sayı gireceksiniz ? : ");
+        total = girdi.nextInt();
+
+        for (int i = 0; i < total; i++) {
+            System.out.println("Sayı: ");
+            int girilenSayi = girdi.nextInt();
+            if (girilenSayi >= geciciMax) {
+                geciciMax = girilenSayi;
+            }
+            if (girilenSayi <= geciciMin) {
+                geciciMin = girilenSayi;
+            }
+        }
+        System.out.println("Max: " + geciciMax);
+        System.out.println("Min: " + geciciMin);
+    }
+
+    public static void perfectNumber() {
+        Scanner girdi = new Scanner(System.in);
+
+        int a = girdi.nextInt();
+        int toplam = 0;
+
+        for (int i = 1; i < a; i++) {
+            if (a % i == 0) {
+                toplam += i;
+            }
+        }
+
+        if (toplam == a) {
+            System.out.println(a + " Mükemmel sayıdır.");
+        } else {
+            System.out.println(a + " Mükemmel sayı değildir.");
+        }
+    }
 }
+
 
 
 
