@@ -1415,17 +1415,43 @@ public class Main {
         System.out.println("Bir sayı giriniz: ");
         int girilenSayi = girdi.nextInt();
 
-        int basamakSayisi = 0;
-
         //basamak sayisinin hesaplanmasi
 
-        while (girilenSayi != 0){
-            girilenSayi /= 10;
+        int basamakSayisi = 0,
+                tempGirilenSayi = girilenSayi; // Girilen değeri kaybetmemek için oluşturulan gecici değişken.
+        int basamakDegeri;
+        int sonuc = 0,
+                usluSonuc; //global ve lokal değişken kritik bir durum, eğer ilk 1 atamasını burada yapıp while içinde
+                                                        // lokal olarak yapmaz iseniz sonuc çıkmayacak.
+
+
+        while (tempGirilenSayi != 0) {
+            tempGirilenSayi /= 10;
             basamakSayisi++;
         }
 
+        tempGirilenSayi = girilenSayi; // Değeri tekrar kullanmak için atamayı tekrar yapıyoruz.
+        // tempGirilenSayi değişkeninin işlemden çıktıktan sonraki güncel değeri 0,
+        // tekrar kullanabilmek için girilen değeri tekrardan atadık.
 
 
+
+        //sonuncu basamağın değerini elde etmek için yazdığımız döngü
+
+        while (tempGirilenSayi != 0) {
+            basamakDegeri = tempGirilenSayi % 10;
+            usluSonuc = 1;
+            //basamağın üssünü aldığımız for döngüsü
+            for (int i = 1; i <= basamakSayisi; i++) {
+                usluSonuc *= basamakDegeri;
+            }
+            //günün sonunda her basamağın n'inci üssünü alıp değerlerini topladığımız değişken
+            sonuc += usluSonuc;
+            tempGirilenSayi /= 10;
+
+        }
+
+        System.out.println("Sonuc: "+ sonuc);
 
     }
 
