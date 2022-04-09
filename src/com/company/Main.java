@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        armstrongSayi();
+        atmProjesi();
     }
 
     public static void test() {
@@ -1422,7 +1422,7 @@ public class Main {
         int basamakDegeri;
         int sonuc = 0,
                 usluSonuc; //global ve lokal değişken kritik bir durum, eğer ilk 1 atamasını burada yapıp while içinde
-                                                        // lokal olarak yapmaz iseniz sonuc çıkmayacak.
+        // lokal olarak yapmaz iseniz sonuc çıkmayacak.
 
 
         while (tempGirilenSayi != 0) {
@@ -1433,7 +1433,6 @@ public class Main {
         tempGirilenSayi = girilenSayi; // Değeri tekrar kullanmak için atamayı tekrar yapıyoruz.
         // tempGirilenSayi değişkeninin işlemden çıktıktan sonraki güncel değeri 0,
         // tekrar kullanabilmek için girilen değeri tekrardan atadık.
-
 
 
         //sonuncu basamağın değerini elde etmek için yazdığımız döngü
@@ -1451,12 +1450,183 @@ public class Main {
 
         }
 
-        System.out.println("Sonuc: "+ sonuc);
+        if (sonuc == girilenSayi) {
+            System.out.println(girilenSayi + " Bir armstrong sayısıdır.");
+        } else {
+            System.out.println(girilenSayi + " Bir armstrong sayısı değildir.");
+        }
 
     }
 
+    public static void basamakToplamaOdev() {
 
+        //Ödev
+        //Bir sayının basamak sayılarının toplamını hesaplayan program yazınız.
+        //
+        //Örnek : 1643 = 1 + 6 + 4 + 3 = 14
+
+        Scanner girdi = new Scanner(System.in);
+
+        System.out.println("Bir sayı giriniz: ");
+        int girilenDeger = girdi.nextInt();
+        int basamakToplam = 0;
+
+
+        while (girilenDeger != 0) {
+            int basamakDegeri = girilenDeger % 10;
+            basamakToplam = basamakDegeri + basamakToplam;
+            girilenDeger = girilenDeger / 10;
+        }
+
+        System.out.println(basamakToplam);
+        //Kodu adım adım işletmek için;
+        //https://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+ClassNameHere+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int+girilenDeger+%3D+258%3B%0A++++++++int+basamakToplam+%3D+0%3B%0A%0A%0A++++++++while+(girilenDeger+!%3D+0)+%7B%0A++++++++++++int+basamakDegeri+%3D+girilenDeger+%25+10%3B%0A++++++++++++basamakToplam+%3D+basamakDegeri+%2B+basamakToplam%3B%0A++++++++++++girilenDeger+%3D+girilenDeger+/+10%3B%0A++++++++%7D%0A%0A++++++++System.out.println(basamakToplam)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0
+
+
+    }
+
+    public static void harmonikSayilariBulanProg() {
+
+        // Java ile girilen sayının harmonik serisini bulan program yazacağız.
+        //
+        //Harmonik Seri Formülü : 1+ 1/2 + 1/3 + 1/4 + 1/5 + .... +  1 / n
+
+        Scanner girdi = new Scanner(System.in);
+        float girilenDeger = girdi.nextInt();
+        double toplam = 0.0;
+
+        for (float i = 1; i <= girilenDeger; i++) {
+            toplam += (1 / i);
+        }
+        System.out.println(toplam);
+
+    }
+
+    public static void yildizlarIleUcgenCizimi() {
+        Scanner girdi = new Scanner(System.in);
+        int n = girdi.nextInt();
+
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= (n - i); j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= (2 * i) - 1; k++) {
+                System.out.print("*");
+            }
+
+
+            System.out.println();
+
+
+        }
+
+
+    }
+
+    public static void yildizlarIleElmasOdev() {
+        Scanner girdi = new Scanner(System.in);
+        int yukseklik = girdi.nextInt(); //yükseklik hep tek sayi olacaktir
+        int yariyukseklik = (int) (yukseklik / 2) + 1;
+
+        for (int i = 0; i < yariyukseklik; i++) {
+            for (int j = 1; j <= yariyukseklik - i; j++)
+                System.out.print(" ");
+
+            for (int j = 1; j <= 2 * i - 1; j++)
+                System.out.print("*");
+
+            System.out.println();
+        }
+        //üst yarısı tamam
+        for (int i = yariyukseklik - 1; i >= 1; i--) {
+            for (int j = 1; j <= yariyukseklik - i; j++)
+                System.out.print(" ");
+
+            for (int j = 1; j <= 2 * i - 1; j++)
+                System.out.print("*");
+
+            System.out.println();
+        }
+
+    }
+
+    public static void atmProjesi() {
+        Scanner girdi = new Scanner(System.in);
+        String userName, password;
+        int girisHakki = 3;
+        int bakiye = 1500;
+        int secim;
+
+        while (girisHakki > 0) {
+            System.out.println("Kullanıcı adınızı giriniz: ");
+            userName = girdi.nextLine();
+
+            System.out.println("Şifrenizi giriniz: ");
+            password = girdi.nextLine();
+
+            if (userName.equals("Alpagu") && password.equals("123456")) {
+                System.out.println("Giriş İşlemi Başarılı.\n" +
+                        "X Bankasına hoşgeldiniz.\n" +
+                        "Güncel Bakiyeniz:  " + bakiye);
+
+                do {
+                    System.out.println("Lütfen yapmak istediğiniz işlemi seçiniz: \n" +
+                            "1-Para Yatırma\n" +
+                            "2-Para Çekme\n" +
+                            "3-Bakiye Sorgula \n" +
+                            "4-Çıkış Yap");
+                    secim = girdi.nextInt();
+
+                    if (secim == 1) {
+                        System.out.println("Yatırılacak Miktar: ");
+                        int miktar = girdi.nextInt();
+                        if (miktar > 0) {
+                            bakiye += miktar;
+                            System.out.println("Güncel miktar: " + bakiye);
+                        } else {
+                            System.out.println("Girilen miktar 0'dan büyük olmalı!");
+                        }
+                    }
+                    if (secim == 2) {
+                        System.out.println("Güncel bakiyeniz: " + bakiye + "\n" +
+                                "Çekmek istediğiniz miktarı giriniz: ");
+                        int miktar = girdi.nextInt();
+                        if (bakiye < miktar || miktar < 0) {
+                            System.out.println("Yetersiz Bakiye");
+                        } else {
+                            bakiye -= miktar;
+                            System.out.println("Güncel bakiyeniz: " + bakiye);
+                        }
+                    }
+                    if (secim == 3) {
+                        System.out.println("Güncel bakiyeniz: " + bakiye);
+                    }
+                } while (secim != 4);
+                System.out.println("Bizi tercih ettiğiniz için teşekkürler...");
+                break;
+
+
+            } else {
+                System.out.println("Hatalı kullanıcı adı veya şifre.");
+                girisHakki -= 1;
+                System.out.println("Kalan hakkınız: " + girisHakki);
+                if (girisHakki == 0) {
+                    System.out.println("Hesabınız bloke edildi.");
+                }
+            }
+        }
+
+
+    }
 }
+
+
+
+
+
+
+
 
 
 
