@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        usluSayiHesapFor();
+        armstrongSayi();
     }
 
     public static void test() {
@@ -1273,17 +1273,17 @@ public class Main {
 
     }
 
-    public static void faktoriyelHesabi(){
+    public static void faktoriyelHesabi() {
         Scanner girdi = new Scanner(System.in);
         int n = girdi.nextInt();
         int total = 1;
-        for (int i = 1 ; i <= n; i++){
-            total = total * i ;
+        for (int i = 1; i <= n; i++) {
+            total = total * i;
         }
-        System.out.println(n+"! = " + total);
+        System.out.println(n + "! = " + total);
     }
 
-    public static void kombOdevi(){
+    public static void kombOdevi() {
 
         //Java ile kombinasyon hesaplayan program yazınız.
 
@@ -1294,19 +1294,19 @@ public class Main {
         int r = girdi.nextInt();
 
 
-        int totaln = 1,totalr=1;
+        int totaln = 1, totalr = 1;
         int nEksiRfak = 1;
 
-        for (int i = 1 ; i <= n; i++){
-            totaln = totaln * i ;
+        for (int i = 1; i <= n; i++) {
+            totaln = totaln * i;
         }
 
-        for (int j = 1 ;  j <= r ; j++){
+        for (int j = 1; j <= r; j++) {
             totalr = totalr * j;
         }
 
-        for (int i = 1 ; i <= n-r ; i++){
-            nEksiRfak *=i;
+        for (int i = 1; i <= n - r; i++) {
+            nEksiRfak *= i;
         }
 
         double komb = (totaln) / ((totalr) * (nEksiRfak));
@@ -1314,7 +1314,7 @@ public class Main {
         System.out.println(komb);
     }
 
-    public static void usluSayiHesaplayanProg(){
+    public static void usluSayiHesaplayanProg() {
 
         //Java ile kullanıcının girdiği değerler ile üslü sayı hesaplayan programı
         // yazıyoruz.
@@ -1324,7 +1324,7 @@ public class Main {
         int n = girdi.nextInt();
         int k = girdi.nextInt();
         int sonuc = 1;
-        while (k != 0){
+        while (k != 0) {
             sonuc *= n;
             k--;
 
@@ -1332,19 +1332,100 @@ public class Main {
         System.out.println(sonuc);
     }
 
-    public static void usluSayiHesapFor(){
+    public static void usluSayiHesapFor() {
         //Java ile kullanıcının girdiği değerler ile üslü sayı hesaplayan programı
         // "For Döngüsü" kullanarak yapınız.
 
         Scanner girdi = new Scanner(System.in);
-        int n,k, sonuc = 1;
+        int n, k, sonuc = 1;
         n = girdi.nextInt();
         k = girdi.nextInt();
 
-        for (int i = k; i != 0  ; i--){
+        for (int i = k; i != 0; i--) {
             sonuc *= n;
         }
         System.out.println(sonuc);
+
+    }
+
+    public static void armstrongSayi() {
+
+
+
+        /*Java döngüler ile sayının armstrong sayı olup olmadığını bulan programı
+        yazıyoruz.
+
+    Armstrong Sayı Nedir ?
+    N haneli bir sayının basamaklarının n’inci üstlerinin toplamı,
+    sayının kendisine eşitse, böyle sayılara Armstrong sayı denir.
+
+    Örneğin 407 sayısını ele alalım. (4^3)+ (0^3)+(7^3) = 64+0+343 = 407 sonucunu verir.
+    Bu da 407 sayısının armstrong bir sayı olduğunu gösterir.
+
+    1342 sayısına da bakalım. (1^4)+(3^4)+(4^4)+(2^4) =1+81+256+16=354 sayısı 1342’ye eşit
+    olmadığı için armstrong sayı olmaz.
+
+    1634=1^4+6^4+3^4+4^4=1+1296+81+256=1634
+
+    54748=5^5+4^5+7^5+4^5+8^5=3125+1024+16807+1024+32768=54748
+
+        */
+        // BAŞLA
+        // Sayının basamak sayısını bul
+        // N BASAMAKLI BİR SAYININ N'İNCİ SAYISINI BUL.
+        // N BASAMAKLI BİR SAYININ N'İNCİ ÜSTLERİNİN TOPLAMINI BUL
+        // N'İNCİ ÜSTLERİNİN TOPLAMI SAYININ KENDİSİNE EŞİT Mİ KONTROL ET.
+        // EŞİTSE TRUE DEĞİL İSE FALSE DÖNDÜR
+        // BİTİR.
+
+//        int girilenSayi = 24451;
+//
+//        int basamakSayisi = 0;
+
+        // BASAMAK SAYISI BULMA İŞLEMİ
+        // 2451 / 10 = 245 (int)
+        // 245 / 10 = 24
+        // 24 / 10 = 2
+        // 2 / 10 = 0
+
+//
+//        while (girilenSayi != 0) {
+//
+//            girilenSayi /=  10;
+//            basamakSayisi += 1;
+//
+//        }
+
+        // sayinin üssünü alma
+
+//        int sayi = 5;
+//        int us = 3;
+//        int sonuc= 1;
+//        for (int i = 1 ; i <= us ; i++){
+//            sonuc *= sayi;
+//
+//        }
+
+        // N BASAMAKLI BİR SAYININ N'İNCİ SAYISINI BUL.
+
+        // a % 10 bize n'inci basamağı verir.
+        //  System.out.println( 24451%10);
+
+        Scanner girdi = new Scanner(System.in);
+        System.out.println("Bir sayı giriniz: ");
+        int girilenSayi = girdi.nextInt();
+
+        int basamakSayisi = 0;
+
+        //basamak sayisinin hesaplanmasi
+
+        while (girilenSayi != 0){
+            girilenSayi /= 10;
+            basamakSayisi++;
+        }
+
+
+
 
     }
 
