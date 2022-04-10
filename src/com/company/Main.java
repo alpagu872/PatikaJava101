@@ -2,20 +2,32 @@ package com.company;
 
 import java.util.Scanner;
 
+
+
 public class Main {
 
+    static int recPower(int taban,int us){
+        if (us == 0 || taban == 1){
+            return 1;
+        }
+        else {
+            return taban*recPower(taban,us-1);
+        }
+    }
+
+
     public static void main(String[] args) {
-        int result = sum(5, 8) + sum(7,8);
-        System.out.println(result);
+        System.out.println(recPower(2,7));
 
     }
+
 
     public static void test() {
 
 
     }
 
-    public static void print() {
+    public static void print1() {
         System.out.println("Sa");
         System.out.println("Lorem\r ipsum dolor \b sit\t amet");
 
@@ -1846,6 +1858,82 @@ public class Main {
 
     static int sum(int a, int b) {
         return a + b;
+    }
+
+    static void print() {
+        System.out.println("Parametresiz olan metot.");
+    }
+
+    static int print(int a) {
+        System.out.println("Parametreli metot.");
+        return a;
+    }
+
+    static int print(int a, int b) {
+        return a + b;
+    }
+
+    static int print(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    static int f(int x) {
+
+        //f(1) = 1;
+        //
+        //f(2) = f(1) + 2;
+        //
+        //f(3) = f(2) + 3;
+        //
+        //f(4) = f(3) + 4;
+        //
+        //..........
+        //
+        //..........
+        //
+        //f(n) = f(n-1) + n;
+
+        int result = 0;
+        for (int i = 1; i <= x; i++) {
+            result += i;
+        }
+        return result;
+    }
+
+    static int fRec(int n) {
+        System.out.println(n);
+        if (n == 1) {
+            return 1;
+        }
+        return fRec(n - 1) * n;
+    }
+
+    static boolean isPalindrom(int number) {
+        int temp = number, reverseNumber = 0, lastNumber;
+
+        while (temp != 0) {
+            System.out.println("Sayı => " + temp);
+            lastNumber = temp % 10; // giren sayının son basamağını elde ettiğimiz işlem
+            System.out.println("Son basamak => " + lastNumber);
+            reverseNumber = (reverseNumber * 10) + lastNumber; // sürekli sağa kaydırma, sola kaydırmak isteseydik 10'a bölmeliydik
+            System.out.println("Yeni sayı => " + reverseNumber);
+            temp /= 10;
+            System.out.println("=============");
+        }
+        if (reverseNumber == number) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    static int recFib(int number) {
+        if (number == 1 || number == 2) {
+            return 1;
+        }
+
+        return recFib(number - 1) + recFib(number - 2);
     }
 
 
