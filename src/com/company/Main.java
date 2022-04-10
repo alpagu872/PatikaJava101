@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        perfectNumber();
+        int result = sum(5, 8) + sum(7,8);
+        System.out.println(result);
+
     }
 
     public static void test() {
 
 
     }
-
 
     public static void print() {
         System.out.println("Sa");
@@ -1759,6 +1760,95 @@ public class Main {
             System.out.println(a + " Mükemmel sayı değildir.");
         }
     }
+
+    public static void tersUcgen() {
+        Scanner girdi = new Scanner(System.in);
+        int a = girdi.nextInt();
+
+        for (int i = 0; i < a; i++) {
+
+            for (int k = 0; k < i; k++) {
+                System.out.print(" ");
+            }
+            for (int l = 0; l < 2 * (a - i) - 1; l++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+
+        }
+
+    }
+
+    public static void asalBulma() {
+        Scanner girdi = new Scanner(System.in);
+        int input = girdi.nextInt();
+        int sayac = 0;
+
+        for (int i = 2; i < input; i++) {
+            for (int j = 2; j < input; j++) {
+                if (i % j == 0) {
+                    sayac++;
+                }
+            }
+
+            if (sayac < 2) {
+                System.out.print(i + ",");
+
+            }
+            sayac = 0;
+        }
+
+
+    }
+
+    public static void fibonacciSerisi() {
+        Scanner girdi = new Scanner(System.in);
+        int length = girdi.nextInt();
+        int n1 = 0, n2 = 1, temp;
+
+        for (int i = 0; i < length; i++) {
+            temp = n1 + n2;
+            n1 = n2;
+            n2 = temp;
+            System.out.println(temp);
+        }
+    }
+
+    public static void hackerrankJavaLoopsII() {
+
+        ////!!!
+        Scanner sc = new Scanner(System.in);
+        int testCases = sc.nextInt();
+        for (int i = 0; i < testCases; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int n = sc.nextInt();
+
+            int sum = a;
+            for (int j = 0; j < n; j++) {
+                sum += b * Math.pow(2, j);
+                System.out.print(sum + " ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static int usAlma(int base, int exp) {
+        int result = 1;
+
+        for (int i = 0; i < exp; i++) {
+            result *= base;
+        }
+        return result;
+
+    }
+
+    static int sum(int a, int b) {
+        return a + b;
+    }
+
+
 }
 
 
