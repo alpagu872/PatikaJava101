@@ -21,13 +21,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] list = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-        int[] newListe = reverse(list);
-        printArray(newListe);
+        String[] days = {"PAZAR", "PAZARTESİ", "SALI", "ÇARŞAMBA", "PERŞEMBE", "CUMA"};
 
-        double[] list2 = {1.1, 2.2, 3.3};
-
-        printArray(list2);
+        String[] weekednDays = new String[]{"CUMARTESİ", "PAZAR"};
 
     }
 
