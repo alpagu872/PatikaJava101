@@ -5,12 +5,14 @@ public class Course {
     String name;
     String code;
     String prefix;
+    int sozlu;
     int note;
 
     Course(String name, String code, String prefix) {
         this.name = name;
         this.code = code;
         this.prefix = prefix;
+        int sozlu = 0;
         int note = 0;
 
 
@@ -20,7 +22,7 @@ public class Course {
         if (teacher.branch.equals(this.prefix)) {
             this.teacher = teacher;
 
-        }else {
+        } else {
             System.out.println("Öğretmen ve Ders bölümleri uyuşmuyor.");
         }
     }

@@ -20,12 +20,12 @@ public class Main {
 
         Student s1 = new Student("Hasan", "4.", tarih, fizik, biyo, "150");
 
-        s1.addBulkExamNote(100, 55, 55);
+//        s1.addBulkExamNote(100, 55, 55);
         s1.isPass();
 
         Student s2 = new Student("Akgün" , "5",tarih,fizik,biyo,"321");
 
-        s2.addBulkExamNote(75,87,20);
+        s2.addBulkExamNote(75,100,50,100,20,50);
         s2.isPass();
     }
 }
