@@ -4,40 +4,70 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class DizilerOrt {
+
     static boolean isFind(int[] arr, int value) {
         for (int i : arr) {
             if (i == value) {
                 return true;
             }
         }
+        return false;
 
+    }
+
+    static boolean isSame(int[] arr, int value) {
+        for (int i : arr) {
+            if (i == value) {
+                return true;
+            }
+        }
         return false;
 
     }
 
     public static void main(String[] args) {
-
-        int[] list = {3, 7, 3, 3, 2, 9, 9, 10, 21, 1, 33, 1};
+        int[] list = {10, 20, 20, 10, 10, 20, 5, 20};
         int[] duplicate = new int[list.length];
-        int statIndex = 0;
+        int counter = 0;
+        int startIndex = 0;
+
         for (int i = 0; i < list.length; i++) {
+
             for (int j = 0; j < list.length; j++) {
-                if ((i != j) && (list[i] == list[j])) {
-                    if (!isFind(duplicate, list[i])) {
-                        duplicate[statIndex++] = list[i];
-                    }
-                    break;
+                if ((list[i] == list[j])) {
+                    counter++;
+
                 }
             }
+            if (!isSame(duplicate, list[i])) {
+                duplicate[startIndex++] = list[i];
+                System.out.println(list[i] + " Sayısı " + counter + " defa tekrar edildi.");
+            }
+            counter = 0;
         }
-        for (int value : duplicate) {
-            if (value != 0) {
-                System.out.print(value + " ");
+    }
+
+    static void printList(int[] arr) { //KULLANILMADI
+        System.out.println("Dizi: ");
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
+
+    static void siralama(int[] arr) {
+        int temp = 0;
+        System.out.println("Sırali Liste: ");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
 
             }
+            System.out.print(arr[i] + " ");
         }
-
-
     }
 
     static void calcAverage(int[] arr) {
@@ -114,5 +144,33 @@ public class DizilerOrt {
 
 
     }
+
+
+    static void dizibefore() {
+        int[] list = {3, 7, 3, 3, 2, 2, 5, 6, 6, 6, 8, 8, 8, 10, 10, 10, 9, 9, 10, 21, 1, 33, 1};
+        int[] duplicate = new int[list.length];
+        int startIndex = 0;
+
+        for (int i = 0; i < list.length; i++) {
+
+            for (int j = 0; j < list.length; j++) {
+                if ((i != j) && (list[i] == list[j])) {
+                    if (!isFind(duplicate, list[i])) {
+                        duplicate[startIndex++] = list[i];
+                    }
+                    break;
+                }
+            }
+
+        }
+
+        for (int value : duplicate) {
+            if (value != 0 && (value % 2 == 0)) {
+                System.out.print(value + " ");
+            }
+        }
+
+    }
+
 
 }
